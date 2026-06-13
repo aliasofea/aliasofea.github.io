@@ -14,7 +14,7 @@
             --text-light: #ffffff;
             --bg-light: #f8fafc;
             --card-bg: #ffffff;
-            --border-color: #cbd5e1;
+            --border-color: #1c2d37; /* Diubah ke warna gelap untuk impak sketch */
         }
 
         * {
@@ -34,13 +34,14 @@
             background-color: var(--bg-light);
         }
 
-        /* HEADER PREMIUM RE-DESIGN */
+        /* HEADER PREMIUM RE-DESIGN WITH SKETCHY FOLDER LOOK */
         header {
             background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
             color: var(--text-light);
             padding: 5rem 2rem 5rem 2rem;
             text-align: center;
             position: relative;
+            border-bottom: 4px solid var(--text-dark);
         }
 
         .header-container {
@@ -48,22 +49,21 @@
             margin: 0 auto;
         }
 
-        /* Gaya Bingkai Gambar Profil Bulat */
+        /* Bingkai Gambar Profil Bulat Sketchy */
         .profile-frame {
             width: 140px;
             height: 140px;
             margin: 0 auto 1.5rem auto;
             border-radius: 50%;
             border: 4px solid var(--text-light);
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.25), 0 4px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.25), 6px 6px 0px rgba(0, 0, 0, 0.3);
             overflow: hidden;
             background-color: var(--secondary-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.2s ease;
         }
 
         .profile-frame:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.4), 0 6px 20px rgba(0, 0, 0, 0.35);
+            transform: scale(1.05) rotate(-3deg);
         }
 
         .profile-frame img {
@@ -77,7 +77,7 @@
             margin-bottom: 0.5rem;
             letter-spacing: 0.5px;
             font-weight: 700;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
         }
 
         header h2 {
@@ -88,47 +88,75 @@
             letter-spacing: 0.3px;
         }
 
+        /* REKA BENTUK KAD FAIL (FOLDER LOOK) & SKETCHY */
         .meta-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.25rem;
-            background: rgba(255, 255, 255, 0.12);
-            padding: 1.75rem;
-            border-radius: 12px;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.15);
+            padding: 2.2rem 1.75rem 1.75rem 1.75rem;
+            
+            /* Sempadan Sketchy (Seolah-olah Dilukis Tangan) */
+            border: 3px solid var(--text-light);
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; 
+            
             text-align: left;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            position: relative;
+            margin-top: 3rem;
+            box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Telinga Folder / File Tab */
+        .meta-grid::before {
+            content: "DOCUMENTS // PROFILE";
+            position: absolute;
+            top: -2.1rem;
+            left: 15px;
+            background: var(--accent-color);
+            color: var(--text-light);
+            font-size: 0.75rem;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            padding: 0.4rem 1.2rem;
+            
+            /* Sempadan Sketchy untuk Tab Fail */
+            border: 3px solid var(--text-light);
+            border-bottom: none;
+            border-radius: 12px 12px 0 0;
+            
+            font-family: 'Courier New', Courier, monospace;
         }
 
         .meta-item {
-            padding: 0.25rem 0.5rem;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.15);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 10px 20px 12px 15px/20px 12px 15px 10px;
         }
 
         .meta-item span {
             display: block;
             font-size: 0.8rem;
             text-transform: uppercase;
-            opacity: 0.75;
+            opacity: 0.9;
             letter-spacing: 1px;
             margin-bottom: 0.25rem;
-            color: var(--secondary-color);
-            font-weight: 600;
+            color: #ffe699; /* Kuning ala pen highlighter */
+            font-weight: 700;
         }
 
         .meta-item strong {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 600;
             color: var(--text-light);
         }
 
-        /* NAVIGATION BAR */
+        /* NAVIGATION BAR SKETCHY */
         nav {
             position: sticky;
             top: 0;
             background-color: var(--card-bg);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-bottom: 3px solid var(--text-dark);
             z-index: 1000;
         }
 
@@ -145,18 +173,19 @@
             padding: 1rem 1.25rem;
             color: var(--text-dark);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.95rem;
             white-space: nowrap;
-            transition: color 0.2s, background-color 0.2s;
+            transition: all 0.2s;
         }
 
         nav a:hover {
             color: var(--primary-color);
             background-color: var(--secondary-color);
+            transform: translateY(-2px);
         }
 
-        /* SECTIONS & CARDS */
+        /* SECTIONS & SKETCHY CARDS */
         section {
             max-width: 1100px;
             margin: 0 auto;
@@ -167,17 +196,19 @@
             font-size: 2rem;
             color: var(--primary-dark);
             margin-bottom: 2rem;
-            border-bottom: 3px solid var(--primary-color);
+            border-bottom: 4px solid var(--text-dark);
             padding-bottom: 0.5rem;
             display: inline-block;
+            border-radius: 0 0 4px 12px/0 0 4px 12px;
         }
 
         .intro-card {
             background-color: var(--card-bg);
             padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-left: 5px solid var(--accent-color);
+            border: 3px solid var(--text-dark);
+            border-radius: 12px 255px 15px 225px/255px 15px 225px 12px; /* Sketchy shape */
+            box-shadow: 8px 8px 0px var(--text-dark);
+            position: relative;
         }
 
         .intro-card p {
@@ -188,8 +219,8 @@
         .sdg-box {
             background-color: var(--secondary-color);
             padding: 1.25rem;
+            border: 2px dashed var(--text-dark);
             border-radius: 8px;
-            border: 1px solid var(--border-color);
         }
 
         .sdg-box h3 {
@@ -201,17 +232,24 @@
         .grid-layout {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
+        /* PORTFOLIO CARD SKETCHY DEVELOEPR LOOK */
         .portfolio-card {
             background-color: var(--card-bg);
-            border-radius: 12px;
+            border: 3px solid var(--text-dark);
+            border-radius: 15px 15px 255px 15px/15px 255px 15px 15px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border: 1px solid var(--border-color);
+            box-shadow: 8px 8px 0px var(--text-dark);
             display: flex;
             flex-direction: column;
+            transition: transform 0.2s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px var(--text-dark);
         }
 
         .video-container {
@@ -219,6 +257,7 @@
             width: 100%;
             padding-top: 56.25%;
             background-color: #000;
+            border-bottom: 3px solid var(--text-dark);
         }
 
         .video-container iframe {
@@ -245,18 +284,19 @@
 
         .card-content .desc {
             font-size: 0.95rem;
-            color: #64748b;
+            color: #556575;
             margin-bottom: 1rem;
         }
 
         .card-content .reflection-title {
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.9rem;
             color: var(--text-dark);
             margin-top: auto;
-            border-top: 1px solid #f1f5f9;
+            border-top: 2px dashed var(--text-dark);
             padding-top: 1rem;
             margin-bottom: 0.25rem;
+            text-transform: uppercase;
         }
 
         .card-content .reflection-text {
@@ -265,26 +305,33 @@
             color: #475569;
         }
 
+        /* BUTANG STYLE KOMIK / SKETCH */
         .btn-github {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background-color: #24292e;
-            color: var(--text-light);
+            background-color: #ffe699; /* Tukar warna cerah ala buku sketch */
+            color: var(--text-dark);
             text-decoration: none;
             padding: 0.6rem 1.2rem;
+            border: 2px solid var(--text-dark);
             border-radius: 6px;
             font-size: 0.9rem;
-            font-weight: 600;
+            font-weight: 700;
             margin-top: 1rem;
-            transition: background-color 0.2s;
+            box-shadow: 4px 4px 0px var(--text-dark);
+            transition: all 0.1s;
             gap: 0.5rem;
         }
 
         .btn-github:hover {
-            background-color: #000000;
+            background-color: var(--accent-color);
+            color: white;
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px var(--text-dark);
         }
 
+        /* TAG SKILLS COOPERATIVE SKETCH */
         .skills-list {
             display: flex;
             flex-wrap: wrap;
@@ -293,21 +340,23 @@
         }
 
         .skills-list li {
-            background-color: var(--primary-color);
-            color: var(--text-light);
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
             padding: 0.5rem 1rem;
-            border-radius: 20px;
+            border: 2px solid var(--text-dark);
+            border-radius: 20px 10px 20px 10px/10px 20px 10px 20px;
             font-size: 0.95rem;
-            font-weight: 600;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            font-weight: 700;
+            box-shadow: 3px 3px 0px var(--text-dark);
         }
 
+        /* RESOURCES CARD SKETCHY */
         .resources-card {
             background-color: var(--card-bg);
             padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border: 1px solid var(--border-color);
+            border: 3px solid var(--text-dark);
+            border-radius: 12px 20px 12px 255px/20px 12px 255px 12px;
+            box-shadow: 8px 8px 0px var(--text-dark);
         }
 
         .resources-card h3 {
@@ -325,13 +374,13 @@
         }
 
         footer {
-            background-color: var(--primary-dark);
+            background-color: #1c2d37;
             color: var(--text-light);
             text-align: center;
             padding: 2.5rem 1.5rem;
             margin-top: 5rem;
             font-size: 0.95rem;
-            border-top: 4px solid var(--accent-color);
+            border-top: 6px solid var(--accent-color);
         }
 
         footer p {
@@ -356,7 +405,7 @@
             }
             .meta-grid {
                 grid-template-columns: 1fr;
-                padding: 1.25rem;
+                padding: 2rem 1.25rem 1.25rem 1.25rem;
             }
             section {
                 padding-top: 4rem;
