@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Portfolio | Alia Sofea</title>
+    <title>E-Portfolio | Alia Sofea Binti Ahmad Saiful</title>
     <style>
         :root {
             --primary-color: #006699;
@@ -34,53 +34,96 @@
             background-color: var(--bg-light);
         }
 
+        /* HEADER PREMIUM RE-DESIGN */
         header {
             background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
             color: var(--text-light);
-            padding: 5rem 2rem 6rem 2rem;
+            padding: 5rem 2rem 5rem 2rem;
             text-align: center;
+            position: relative;
         }
 
         .header-container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
         }
 
+        /* Gaya Bingkai Gambar Profil Bulat */
+        .profile-frame {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 1.5rem auto;
+            border-radius: 50%;
+            border: 4px solid var(--text-light);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.25), 0 4px 15px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            background-color: var(--secondary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-frame:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.4), 0 6px 20px rgba(0, 0, 0, 0.35);
+        }
+
+        .profile-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 0.5rem;
             letter-spacing: 0.5px;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         header h2 {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-weight: 400;
             opacity: 0.9;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            letter-spacing: 0.3px;
         }
 
         .meta-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 8px;
-            backdrop-filter: blur(5px);
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 1.75rem;
+            border-radius: 12px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             text-align: left;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .meta-item {
+            padding: 0.25rem 0.5rem;
         }
 
         .meta-item span {
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            opacity: 0.7;
+            opacity: 0.75;
+            letter-spacing: 1px;
+            margin-bottom: 0.25rem;
+            color: var(--secondary-color);
+            font-weight: 600;
         }
 
         .meta-item strong {
-            font-size: 1.05rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
         }
 
+        /* NAVIGATION BAR */
         nav {
             position: sticky;
             top: 0;
@@ -113,6 +156,7 @@
             background-color: var(--secondary-color);
         }
 
+        /* SECTIONS & CARDS */
         section {
             max-width: 1100px;
             margin: 0 auto;
@@ -297,14 +341,22 @@
 
         @media (max-width: 600px) {
             header {
-                padding: 3rem 1rem 4rem 1rem;
+                padding: 4rem 1rem 3.5rem 1rem;
             }
             header h1 {
-                font-size: 2rem;
+                font-size: 2.1rem;
+            }
+            header h2 {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
+            .profile-frame {
+                width: 110px;
+                height: 110px;
             }
             .meta-grid {
                 grid-template-columns: 1fr;
-                padding: 1rem;
+                padding: 1.25rem;
             }
             section {
                 padding-top: 4rem;
@@ -319,12 +371,18 @@
 
     <header id="home">
         <div class="header-container">
-            <h1>Alia Sofea</h1>
-            <h2>Student e-Portfolio | Mobile Programming Course</h2>
+            <!-- SLOT GAMBAR PROFIL PREMIUM -->
+            <div class="profile-frame">
+                <img src="./profile.png" alt="Alia Sofea Profile Photo" onerror="this.src='https://api.dicebear.com/7.x/initials/svg?seed=Alia%20Sofea&backgroundColor=00a3e0&textColor=ffffff'">
+            </div>
+
+            <h1>Alia Sofea Binti Ahmad Saiful</h1>
+            <h2>Student e-Portfolio | TTTM2213 Mobile Programming</h2>
+            
             <div class="meta-grid">
                 <div class="meta-item">
                     <span>Programme</span>
-                    <strong>Bachelor of Computer Science</strong>
+                    <strong>Information Technology</strong>
                 </div>
                 <div class="meta-item">
                     <span>Matric No.</span>
